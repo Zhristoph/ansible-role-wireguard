@@ -1,0 +1,9 @@
+---
+- name: restart wireguard-servers
+  systemd:
+    name: "wg-quick@{{ item.vpnName }}"
+    daemon_reload: yes
+    state: restarted
+  with_items:
+   - "{{ wireguardVPNs }}"
+
