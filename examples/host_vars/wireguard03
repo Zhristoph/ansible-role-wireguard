@@ -1,0 +1,3 @@
+wireguardPeers:
+ local:
+  - wireguard01

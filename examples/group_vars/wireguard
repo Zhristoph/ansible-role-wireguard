@@ -1,0 +1,70 @@
+wireguardVPNs:
+ - vpnName: local
+   description: "Local VPN"
+   peers:
+    wireguard01:
+      peerName: wireguard01
+      description: "A local server"
+      Address:
+       - 192.168.15.101/24
+      ListenPort: 12345
+      PrivateKey: ProtectThisPrivateKey
+      PublicKey: APublicGeneratedFromThePrivateKey
+      PresharedKey: ProtectThisPresharedSecret
+      PersistentKeepalive: 10
+      AllowedIPs:
+       - 192.168.15.0/24
+    wireguard02:
+      peerName: wireguard02
+      description: "A local peer"
+      Endpoint: 192.168.5.1:12345
+      Address:
+       - 192.168.15.102/24
+      ListenPort: 12345
+      PrivateKey: ProtectThisPrivateKey
+      PublicKey: APublicGeneratedFromThePrivateKey
+      PresharedKey: ProtectThisPresharedSecret
+      PersistentKeepalive: 10
+      AllowedIPs:
+       - 192.168.15.0/24
+    wireguard03:
+      peerName: wireguard03
+      description: "A local peer"
+      Endpoint: 192.168.5.1:12345
+      Address:
+       - 192.168.15.103/24
+      ListenPort: 12345
+      PrivateKey: ProtectThisPrivateKey
+      PublicKey: APublicGeneratedFromThePrivateKey
+      PresharedKey: ProtectThisPresharedSecret
+      PersistentKeepalive: 10
+      AllowedIPs:
+       - 192.168.15.0/24
+ - vpnName: delocal
+   description: "Delocal VPN"
+   peers:
+    wireguard01:
+      peerName: wireguard01
+      description: "A delocal server"
+      Address:
+       - 192.168.25.101/24
+      ListenPort: 12346
+      PrivateKey: ProtectThisPrivateKey
+      PublicKey: APublicGeneratedFromThePrivateKey
+      PresharedKey: ProtectThisPresharedSecret
+      PersistentKeepalive: 10
+      AllowedIPs:
+       - 192.168.25.0/24
+    wireguard04:
+      peerName: wireguard04
+      description: "A delocal peer"
+      Endpoint: 192.168.5.1:12346
+      Address:
+       - 192.168.25.104/24
+      ListenPort: 12346
+      PrivateKey: ProtectThisPrivateKey
+      PublicKey: APublicGeneratedFromThePrivateKey
+      PresharedKey: ProtectThisPresharedSecret
+      PersistentKeepalive: 10
+      AllowedIPs:
+       - 192.168.25.0/24

@@ -1,0 +1,6 @@
+wireguardPeers:
+ local:
+  - wireguard02
+  - wireguard03
+ delocal:
+  - wireguard04

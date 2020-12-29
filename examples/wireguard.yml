@@ -1,0 +1,6 @@
+- name: Wireguard Servers
+  hosts: wireguard
+  become: yes
+  gather_facts: no
+  roles:
+    - wireguard
