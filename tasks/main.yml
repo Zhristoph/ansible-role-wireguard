@@ -17,6 +17,7 @@
     group: root
     mode: 0600
   loop: "{{ wireguardVPNs }}"
+  when: item.vpnName in wireguardPeers 
   notify: restart wireguard-servers
 
 - name: Configure systemd for wireguard
@@ -28,6 +29,7 @@
     group: root
     mode: 0600
   loop: "{{ wireguardVPNs }}"
+  when: item.vpnName in wireguardPeers 
   notify: restart wireguard-servers
 
 - name: Enable wireguard services on systemd
@@ -36,5 +38,6 @@
     name: "wg-quick@{{ item.vpnName }}"
     enabled: yes
   loop: "{{ wireguardVPNs }}"
+  when: item.vpnName in wireguardPeers 
   notify: restart wireguard-servers
 

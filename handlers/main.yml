@@ -4,6 +4,7 @@
     name: "wg-quick@{{ item.vpnName }}"
     daemon_reload: yes
     state: restarted
+  when: item.vpnName in wireguardPeers
   with_items:
    - "{{ wireguardVPNs }}"
 
